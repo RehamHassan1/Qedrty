@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 
+import '../blocc/bloc_bloc.dart';
 import '../componant/com.dart';
 
 class OrderMenu extends StatefulWidget {
@@ -11,6 +13,7 @@ class OrderMenu extends StatefulWidget {
 }
 
 class _OrderMenuState extends State<OrderMenu> {
+  int currentindx = 0;
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -21,19 +24,18 @@ class _OrderMenuState extends State<OrderMenu> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    int _inc = 0;
-    bool flage = true;
+
     return Scaffold(
       body: Column(children: [
         ClipPath(
           clipper: Myclipp(),
           child: Stack(children: [
             Container(
-              color: Color(0XFFFff3939),
+              color: const Color(0XFFFff3939),
               height: size.height / 4,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 50),
               child: Center(
                   child: Icon(
                 Icons.person,
@@ -52,14 +54,14 @@ class _OrderMenuState extends State<OrderMenu> {
             height: size.height / 7,
             child: Row(
               children: [
-                Image(
+                const Image(
                     //height: 20,
                     //width: 20,
                     image: AssetImage('lib/assets/images/images (14).jpeg')),
                 Container(
                   width: size.width / 20,
                 ),
-                Text(
+                const Text(
                   "5 ج.م",
                   style: TextStyle(
                       color: Colors.black,
@@ -71,14 +73,14 @@ class _OrderMenuState extends State<OrderMenu> {
                 ),
                 Column(
                   children: [
-                    Text(
+                    const Text(
                       "طلب صغير",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                    const Text(
                       "فول مدمس بالزيت الحار",
                       style: TextStyle(
                           color: Colors.black54,
@@ -88,20 +90,41 @@ class _OrderMenuState extends State<OrderMenu> {
                     Row(
                       children: [
                         IconButton(
-                            onPressed: () {},
-                            icon: Icon(
+                            onPressed: () {
+                              BlocProvider.of<CounterBloc>(context)
+                                  .add(DecreamentEvent());
+                            },
+                            icon: const Icon(
                                 color: Color(0XFFFff3939),
                                 Icons.remove_circle_outline_sharp)),
-                        Text(
-                          "5",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
+     BlocBuilder<CounterBloc, Counterstate>(
+                          builder: (context, state) {
+                            if (state is CounterInitial) {
+                              return const Text(
+                                '0',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              );
+                            } else if (state is CounterValueChangedState) {
+                              return Text(
+                                state.counter.toString(),
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              );
+                            } else
+                              return const SizedBox();
+                          },
                         ),
                         IconButton(
-                            onPressed: () {},
-                            icon: Icon(
+                            onPressed: () {
+                              BlocProvider.of<CounterBloc>(context)
+                                  .add(IncreamentEvent());
+                            },
+                            icon: const Icon(
                                 color: Color(0XFFFff3939),
                                 Icons.add_circle_outline_sharp)),
                       ],
@@ -118,14 +141,14 @@ class _OrderMenuState extends State<OrderMenu> {
             height: size.height / 7,
             child: Row(
               children: [
-                Image(
+                const Image(
                     //height: 20,
                     //width: 20,
                     image: AssetImage('lib/assets/images/images (23).jpeg')),
                 Container(
                   width: size.width / 20,
                 ),
-                Text(
+                const Text(
                   "5 ج.م",
                   style: TextStyle(
                       color: Colors.black,
@@ -137,14 +160,14 @@ class _OrderMenuState extends State<OrderMenu> {
                 ),
                 Column(
                   children: [
-                    Text(
+                    const Text(
                       "طلب وسط",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                    const Text(
                       "فول مدمس بالزيت الحار",
                       style: TextStyle(
                           color: Colors.black54,
@@ -155,29 +178,42 @@ class _OrderMenuState extends State<OrderMenu> {
                       children: [
                         IconButton(
                             onPressed: () {
-                              setState(() {
-                                _inc--;
-                                print('$_inc');
-                              });
+                              BlocProvider.of<CounterBloc>(context)
+                                  .add(DecreamentEvent());
                             },
-                            icon: Icon(
+                            icon: const Icon(
                                 color: Color(0XFFFff3939),
                                 Icons.remove_circle_outline_sharp)),
-                        Text(
-                          '$_inc',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
+// ****
+                        BlocBuilder<CounterBloc, Counterstate>(
+                          builder: (context, state) {
+                            if (state is CounterInitial) {
+                              return const Text(
+                                '0',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              );
+                            } else if (state is CounterValueChangedState) {
+                              return Text(
+                                state.counter.toString(),
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              );
+                            } else
+                              return const SizedBox();
+                          },
                         ),
+
                         IconButton(
                             onPressed: () {
-                              setState(() {
-                                _inc++;
-                                print('$_inc');
-                              });
+                              BlocProvider.of<CounterBloc>(context)
+                                  .add(IncreamentEvent());
                             },
-                            icon: Icon(
+                            icon: const Icon(
                                 color: Color(0XFFFff3939),
                                 Icons.add_circle_outline_sharp)),
                       ],
@@ -191,7 +227,7 @@ class _OrderMenuState extends State<OrderMenu> {
         Container(
           height: size.height / 10,
         ),
-        Text(
+        const Text(
           "25 ج.م",
           style: TextStyle(
               color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
@@ -204,8 +240,8 @@ class _OrderMenuState extends State<OrderMenu> {
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,
         selectedItemColor: Colors.white,
-        snakeViewColor: Color(0XFFFff3939),
-        unselectedItemColor: Color(0XFFFff3939),
+        snakeViewColor: const Color(0XFFFff3939),
+        unselectedItemColor: const Color(0XFFFff3939),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

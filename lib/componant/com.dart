@@ -10,14 +10,16 @@ Widget TextF({
   String? Function(String?)? validator,
   TextEditingController? controller,
   bool obsecure = false,
+  Function(String)? onChange,
 }) {
   return TextFormField(
       keyboardType: typ,
       validator: validator,
+      onChanged: onChange,
       obscureText: obsecure,
       controller: controller,
       decoration: InputDecoration(
-        enabledBorder: UnderlineInputBorder(
+        enabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Color.fromARGB(255, 88, 145, 123)),
         ),
         hintText: hinttext,
@@ -47,21 +49,24 @@ Widget Myoutlinebutton({
   required String hinttext,
   IconData? prfx,
    TextInputType? typ,
+   //Function(String)? onChange,
   IconData? sfx,
   String? Function(String?)? validator,
   TextEditingController? controller,
   bool obsecure = false,
+    required Color? backgroundColor ,
 }) {
   return OutlinedButton(
     onPressed: () {},
+   // onChanged:onChange,
     child: Text(
       hinttext,
-      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
     ),
     style: OutlinedButton.styleFrom(
-      backgroundColor: Color(0XFFF409c74),
+      backgroundColor: backgroundColor,
       primary: Colors.white,
-      fixedSize: Size(250, 35),
+      fixedSize:  Size(250, 35),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(18),
@@ -94,3 +99,8 @@ Widget clip({
           ]),
         ),
 }*/
+
+ void showsnackBar(BuildContext context, String massage) {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(massage)));
+  }

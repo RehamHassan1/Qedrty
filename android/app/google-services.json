@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "840702052282",
+    "project_id": "aswan-a22c9",
+    "storage_bucket": "aswan-a22c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840702052282:android:3a65dd63aa791870f23f83",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app_2drety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840702052282-d4akq28fbj0sq6h8tflkvdoctm4bgb70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXtVNIz7yCUlW5bkxoF2Uy5lucuxbd_1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840702052282-d4akq28fbj0sq6h8tflkvdoctm4bgb70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

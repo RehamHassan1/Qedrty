@@ -71,7 +71,7 @@ class _VISAState extends State<VISA> {
             TextF(hinttext: 'كلمة المرور', typ: TextInputType.visiblePassword),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 40),
-              child: Myoutlinebutton(hinttext: 'ايداع'),
+              child: Myoutlinebutton(hinttext: 'ايداع',backgroundColor: Color(0XFFF409c74)),
             ),
           ],
         ),

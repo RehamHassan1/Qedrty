@@ -9,7 +9,9 @@ class CounterBloc extends Bloc<CounterEvent, Counterstate> {
     on<CounterEvent>((event, emit) {
       if (event is IncreamentEvent) {
         counter = counter + 1;
+
         emit(CounterValueChangedState(counter: counter));
+      
       } else if (event is DecreamentEvent) {
          counter = counter - 1;
         emit(CounterValueChangedState(counter: counter));

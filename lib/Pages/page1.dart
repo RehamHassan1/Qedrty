@@ -7,6 +7,7 @@ import '../componant/com.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
+  static String id = 'page1';
 
   @override
   State<Page1> createState() => _Page1State();
@@ -133,7 +134,7 @@ class _Page1State extends State<Page1> {
                   width: size.width / 3.5,
                 ),
                 Text(
-                  "اكتشف ما حولك",
+                  "اكتشف",
                   style: TextStyle(color: Colors.black, fontSize: 25),
                 ),
               ],

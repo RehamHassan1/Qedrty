@@ -97,7 +97,7 @@ class _OrderMenuState extends State<OrderMenu> {
                             icon: const Icon(
                                 color: Color(0XFFFff3939),
                                 Icons.remove_circle_outline_sharp)),
-     BlocBuilder<CounterBloc, Counterstate>(
+                        BlocBuilder<CounterBloc, Counterstate>(
                           builder: (context, state) {
                             if (state is CounterInitial) {
                               return const Text(
@@ -234,7 +234,8 @@ class _OrderMenuState extends State<OrderMenu> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 140),
-          child: Myoutlinebutton(hinttext: 'اطلب'),
+          child: Myoutlinebutton(
+              hinttext: 'اطلب', backgroundColor: Color(0XFFF409c74)),
         )
       ]),
       bottomNavigationBar: SnakeNavigationBar.color(

@@ -38,7 +38,7 @@ class _EiditOrderState extends State<EiditOrder> {
               width: 360,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('lib/assets/images/images (10).jpeg'),
                   fit: BoxFit.cover,
                 ),
@@ -68,27 +68,26 @@ class _EiditOrderState extends State<EiditOrder> {
         ),
         OutlinedButton(
           onPressed: () {},
-          child: Text(
-            "حفظ التعديل",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
           style: OutlinedButton.styleFrom(
-            backgroundColor: Color(0XFFFff3939),
-            primary: Colors.white,
-            fixedSize: Size(250, 35),
+            foregroundColor: Colors.white, backgroundColor: const Color(0xfffff3939),
+            fixedSize: const Size(250, 35),
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(18),
               ),
             ),
           ),
+          child: const Text(
+            "حفظ التعديل",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
         ),
       ]),
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,
         selectedItemColor: Colors.white,
-        snakeViewColor: Color(0XFFFff3939),
-        unselectedItemColor: Color(0XFFFff3939),
+        snakeViewColor: const Color(0xfffff3939),
+        unselectedItemColor: const Color(0xfffff3939),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

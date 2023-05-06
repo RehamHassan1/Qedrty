@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 
-import '../componant/com.dart';
-
 class AfterAddMeal extends StatefulWidget {
   const AfterAddMeal({super.key});
 
@@ -39,7 +37,7 @@ class _AfterAddMealState extends State<AfterAddMeal> {
               width: 360,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('lib/assets/images/images (10).jpeg'),
                   fit: BoxFit.cover,
                 ),
@@ -54,7 +52,7 @@ class _AfterAddMealState extends State<AfterAddMeal> {
         ),
            Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Container(
+          child: SizedBox(
             height: sizeh / 7,
             child: Row(
               children: [
@@ -75,16 +73,16 @@ class _AfterAddMealState extends State<AfterAddMeal> {
                 Container(
                   width: sizew / 8,
                 ),
-                Column(
+                const Column(
                   children: [
-                    const Text(
+                    Text(
                       "طلب وسط",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
-                    const Text(
+                    Text(
                       "فول مدمس بالزيت الحار",
                       style: TextStyle(
                           color: Colors.black54,
@@ -100,7 +98,7 @@ class _AfterAddMealState extends State<AfterAddMeal> {
         ),
           Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Container(
+          child: SizedBox(
             height: sizeh / 7,
             child: Row(
               children: [
@@ -121,16 +119,16 @@ class _AfterAddMealState extends State<AfterAddMeal> {
                 Container(
                   width: sizew / 8,
                 ),
-                Column(
+                const Column(
                   children: [
-                    const Text(
+                    Text(
                       "طلب وسط",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
-                    const Text(
+                    Text(
                       "فول مدمس بالزيت الحار",
                       style: TextStyle(
                           color: Colors.black54,
@@ -148,8 +146,8 @@ class _AfterAddMealState extends State<AfterAddMeal> {
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,
         selectedItemColor: Colors.white,
-        snakeViewColor: Color(0XFFFff3939),
-        unselectedItemColor: Color(0XFFFff3939),
+        snakeViewColor: const Color(0xfffff3939),
+        unselectedItemColor: const Color(0xfffff3939),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

@@ -32,11 +32,11 @@ class _DeleteOrderState extends State<DeleteOrder> {
             clipper: Myclipp(),
             child: Stack(children: [
               Container(
-                color: Color(0XFFFff3939),
+                color: const Color(0xfffff3939),
                 height: sizeh / 4,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 50),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 50),
                 child: Center(
                     child: Icon(
                   Icons.person,
@@ -62,7 +62,7 @@ class _DeleteOrderState extends State<DeleteOrder> {
                   width: 360,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage('lib/assets/images/images (10).jpeg'),
                       fit: BoxFit.cover,
                     ),
@@ -70,7 +70,7 @@ class _DeleteOrderState extends State<DeleteOrder> {
                 ),
               ),
               //Container(color: Colors.greenAccent,width: 200,height: 110,),
-              Text(
+              const Text(
                 "سندوتشات",
                 style: TextStyle(
                     color: Colors.white,
@@ -92,14 +92,14 @@ class _DeleteOrderState extends State<DeleteOrder> {
                   width: 360,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage('lib/assets/images/images (1).jpeg'),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
               ),
-              Text(
+              const Text(
                 "سايب",
                 style: TextStyle(
                     color: Colors.white,
@@ -121,7 +121,7 @@ class _DeleteOrderState extends State<DeleteOrder> {
                   width: 360,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage('lib/assets/images/images (23).jpeg'),
                       fit: BoxFit.cover,
                     ),
@@ -129,7 +129,7 @@ class _DeleteOrderState extends State<DeleteOrder> {
                 ),
               ),
               //Container(color: Colors.greenAccent,width: 200,height: 110,),
-              Text(
+              const Text(
                 "طلب",
                 style: TextStyle(
                     color: Colors.white,
@@ -140,19 +140,18 @@ class _DeleteOrderState extends State<DeleteOrder> {
           ),
           OutlinedButton(
             onPressed: () {},
-            child: Text(
-              "حذف",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
             style: OutlinedButton.styleFrom(
-              backgroundColor: Color(0XFFFff3939),
-              primary: Colors.white,
-              fixedSize: Size(150, 35),
+              foregroundColor: Colors.white, backgroundColor: const Color(0xfffff3939),
+              fixedSize: const Size(150, 35),
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
                   Radius.circular(18),
                 ),
               ),
+            ),
+            child: const Text(
+              "حذف",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
         ]),
@@ -160,8 +159,8 @@ class _DeleteOrderState extends State<DeleteOrder> {
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,
         selectedItemColor: Colors.white,
-        snakeViewColor: Color(0XFFFff3939),
-        unselectedItemColor: Color(0XFFFff3939),
+        snakeViewColor: const Color(0xfffff3939),
+        unselectedItemColor: const Color(0xfffff3939),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

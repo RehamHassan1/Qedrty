@@ -31,7 +31,7 @@ class _OrderMenuState extends State<OrderMenu> {
           clipper: Myclipp(),
           child: Stack(children: [
             Container(
-              color: const Color(0XFFFff3939),
+              color: const Color(0xfffff3939),
               height: size.height / 4,
             ),
             const Padding(
@@ -50,7 +50,7 @@ class _OrderMenuState extends State<OrderMenu> {
         ),
         Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Container(
+          child: SizedBox(
             height: size.height / 7,
             child: Row(
               children: [
@@ -95,7 +95,7 @@ class _OrderMenuState extends State<OrderMenu> {
                                   .add(DecreamentEvent());
                             },
                             icon: const Icon(
-                                color: Color(0XFFFff3939),
+                                color: Color(0xfffff3939),
                                 Icons.remove_circle_outline_sharp)),
                         BlocBuilder<CounterBloc, Counterstate>(
                           builder: (context, state) {
@@ -125,7 +125,7 @@ class _OrderMenuState extends State<OrderMenu> {
                                   .add(IncreamentEvent());
                             },
                             icon: const Icon(
-                                color: Color(0XFFFff3939),
+                                color: Color(0xfffff3939),
                                 Icons.add_circle_outline_sharp)),
                       ],
                     ),
@@ -137,7 +137,7 @@ class _OrderMenuState extends State<OrderMenu> {
         ),
         Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Container(
+          child: SizedBox(
             height: size.height / 7,
             child: Row(
               children: [
@@ -182,7 +182,7 @@ class _OrderMenuState extends State<OrderMenu> {
                                   .add(DecreamentEvent());
                             },
                             icon: const Icon(
-                                color: Color(0XFFFff3939),
+                                color: Color(0xfffff3939),
                                 Icons.remove_circle_outline_sharp)),
 // ****
                         BlocBuilder<CounterBloc, Counterstate>(
@@ -214,7 +214,7 @@ class _OrderMenuState extends State<OrderMenu> {
                                   .add(IncreamentEvent());
                             },
                             icon: const Icon(
-                                color: Color(0XFFFff3939),
+                                color: Color(0xfffff3939),
                                 Icons.add_circle_outline_sharp)),
                       ],
                     )
@@ -235,14 +235,14 @@ class _OrderMenuState extends State<OrderMenu> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 140),
           child: Myoutlinebutton(
-              hinttext: 'اطلب', backgroundColor: Color(0XFFF409c74)),
+              hinttext: 'اطلب', backgroundColor: const Color(0xfff409c74)),
         )
       ]),
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,
         selectedItemColor: Colors.white,
-        snakeViewColor: const Color(0XFFFff3939),
-        unselectedItemColor: const Color(0XFFFff3939),
+        snakeViewColor: const Color(0xfffff3939),
+        unselectedItemColor: const Color(0xfffff3939),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

@@ -30,11 +30,11 @@ class _OrderResturantState extends State<OrderResturant> {
             clipper: Myclipp(),
             child: Stack(children: [
               Container(
-                color: Color(0XFFFff3939),
+                color: const Color(0xfffff3939),
                 height: size.height / 4,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 50),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 50),
                 child: Center(
                     child: Icon(
                   Icons.person,
@@ -58,7 +58,7 @@ class _OrderResturantState extends State<OrderResturant> {
                 width: 360,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     image: AssetImage('lib/assets/images/images (10).jpeg'),
                     fit: BoxFit.cover,
                   ),
@@ -66,7 +66,7 @@ class _OrderResturantState extends State<OrderResturant> {
               ),
             ),
             //Container(color: Colors.greenAccent,width: 200,height: 110,),
-            Text("سندوتشات",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
+            const Text("سندوتشات",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
           ]),          Container(height: size.height/35,),
 
            Stack(children: [
@@ -80,7 +80,7 @@ class _OrderResturantState extends State<OrderResturant> {
                 width: 360,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     image: AssetImage('lib/assets/images/images (1).jpeg'),
                     fit: BoxFit.cover,
                   ),
@@ -88,7 +88,7 @@ class _OrderResturantState extends State<OrderResturant> {
               ),
             ),
             //Container(color: Colors.greenAccent,width: 200,height: 110,),
-            Text("سايب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
+            const Text("سايب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
           ]),
           Container(height: size.height/35,),
            Stack(children: [
@@ -102,7 +102,7 @@ class _OrderResturantState extends State<OrderResturant> {
                 width: 360,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     image: AssetImage('lib/assets/images/images (23).jpeg'),
                     fit: BoxFit.cover,
                   ),
@@ -110,15 +110,15 @@ class _OrderResturantState extends State<OrderResturant> {
               ),
             ),
             //Container(color: Colors.greenAccent,width: 200,height: 110,),
-            Text("طلب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
+            const Text("طلب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
           ])
         ],
       ),
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,
         selectedItemColor: Colors.white,
-        snakeViewColor: Color(0XFFFff3939),
-        unselectedItemColor: Color(0XFFFff3939),
+        snakeViewColor: const Color(0xfffff3939),
+        unselectedItemColor: const Color(0xfffff3939),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

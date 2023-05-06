@@ -22,11 +22,11 @@ class _VISAState extends State<VISA> {
         clipper: Myclipp(),
         child: Stack(children: [
           Container(
-            color: Color(0XFFFff3939),
+            color: const Color(0xfffff3939),
             height: size.height / 4,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 50),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 50),
             child: Center(
                 child: Icon(
               Icons.person,
@@ -41,7 +41,7 @@ class _VISAState extends State<VISA> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               '120ج.م',
               style: TextStyle(fontSize: 20, color: Colors.black),
             ),
@@ -58,7 +58,7 @@ class _VISAState extends State<VISA> {
   
                     ), */
 
-            Text('حسابي', style: TextStyle(fontSize: 26, color: Colors.black)),
+            const Text('حسابي', style: TextStyle(fontSize: 26, color: Colors.black)),
           ],
         ),
       ),
@@ -71,7 +71,7 @@ class _VISAState extends State<VISA> {
             TextF(hinttext: 'كلمة المرور', typ: TextInputType.visiblePassword),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 40),
-              child: Myoutlinebutton(hinttext: 'ايداع',backgroundColor: Color(0XFFF409c74)),
+              child: Myoutlinebutton(hinttext: 'ايداع',backgroundColor: const Color(0xfff409c74)),
             ),
           ],
         ),

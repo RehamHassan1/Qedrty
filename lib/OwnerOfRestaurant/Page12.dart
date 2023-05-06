@@ -42,7 +42,7 @@ class _EnterOrderState extends State<EnterOrder> {
               width: 360,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('lib/assets/images/images (10).jpeg'),
                   fit: BoxFit.cover,
                 ),
@@ -55,7 +55,7 @@ class _EnterOrderState extends State<EnterOrder> {
         Container(
           height: sizeh / 7,
         ),
-        Image(image: AssetImage('lib/assets/images/icons8-close-48.png')),
+        const Image(image: AssetImage('lib/assets/images/icons8-close-48.png')),
         TextButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -65,14 +65,14 @@ class _EnterOrderState extends State<EnterOrder> {
             child: Text(
               "حذف وجبة",
               style: TextStyle(
-                  color: Color(0XFFF409c74),
+                  color: const Color(0xfff409c74),
                   fontSize: sizeh / 30,
                   fontWeight: FontWeight.bold),
             )),
         Container(
           height: sizeh / 20,
         ),
-        Image(
+        const Image(
             image:
                 AssetImage('lib/assets/images/icons8-edit-text-file-48.png')),
         TextButton(
@@ -84,7 +84,7 @@ class _EnterOrderState extends State<EnterOrder> {
           child: Text(
             "تعديل وجبة",
             style: TextStyle(
-                color: Color(0XFFF409c74),
+                color: const Color(0xfff409c74),
                 fontSize: sizeh / 30,
                 fontWeight: FontWeight.bold),
           ),
@@ -92,7 +92,7 @@ class _EnterOrderState extends State<EnterOrder> {
         Container(
           height: sizeh / 20,
         ),
-        Image(image: AssetImage('lib/assets/images/icons8-plus-math-48.png')),
+        const Image(image: AssetImage('lib/assets/images/icons8-plus-math-48.png')),
         TextButton(
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -102,7 +102,7 @@ class _EnterOrderState extends State<EnterOrder> {
           child: Text(
             "اضافة وجبة",
             style: TextStyle(
-                color: Color(0XFFF409c74),
+                color: const Color(0xfff409c74),
                 fontSize: sizeh / 30,
                 fontWeight: FontWeight.bold),
           ),
@@ -111,8 +111,8 @@ class _EnterOrderState extends State<EnterOrder> {
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,
         selectedItemColor: Colors.white,
-        snakeViewColor: Color(0XFFFff3939),
-        unselectedItemColor: Color(0XFFFff3939),
+        snakeViewColor: const Color(0xfffff3939),
+        unselectedItemColor: const Color(0xfffff3939),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

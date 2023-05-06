@@ -39,7 +39,7 @@ class _DeleteMealState extends State<DeleteMeal> {
               width: 360,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('lib/assets/images/images (10).jpeg'),
                   fit: BoxFit.cover,
                 ),
@@ -52,13 +52,13 @@ class _DeleteMealState extends State<DeleteMeal> {
         Container(
           height: sizeh / 15,
         ),
-        Myoutlinebutton(hinttext: 'حذف', backgroundColor: Color(0XFFFff3939))
+        Myoutlinebutton(hinttext: 'حذف', backgroundColor: const Color(0xfffff3939))
       ]),
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,
         selectedItemColor: Colors.white,
-        snakeViewColor: Color(0XFFFff3939),
-        unselectedItemColor: Color(0XFFFff3939),
+        snakeViewColor: const Color(0xfffff3939),
+        unselectedItemColor: const Color(0xfffff3939),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

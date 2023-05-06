@@ -21,12 +21,12 @@ class _HomePageState extends State<HomePage> {
           clipper: Myclipp(),
           child: Stack(children: [
             Container(
-              color: Color(0XFFFff3939),
+              color: const Color(0xfffff3939),
               height: size.height / 2.7,
             ),
             Center(
                 child: Image(
-              image: AssetImage('lib/assets/images/قدرتي (1)-PhotoRoom.png'),
+              image: const AssetImage('lib/assets/images/قدرتي (1)-PhotoRoom.png'),
               height: size.height / 3.4,
             )),
           ]),
@@ -34,14 +34,14 @@ class _HomePageState extends State<HomePage> {
         Container(
           height: 150,
         ),
-        Text(
+        const Text(
           "اطلب فطارك من مكانك",
           style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Color.fromARGB(221, 41, 40, 40)),
         ),
-        Text("ووفر جهدك ووقتك",
+        const Text("ووفر جهدك ووقتك",
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
           type: MaterialType.transparency,
           child: Ink(
             decoration: BoxDecoration(
-              border: Border.all(color: Color(0XFFFff3939), width: 2.0),
+              border: Border.all(color: const Color(0xfffff3939), width: 2.0),
               color: Colors.white,
               shape: BoxShape.circle,
             ),
@@ -65,12 +65,12 @@ class _HomePageState extends State<HomePage> {
                   return LoginUser();
                 }), (route) => false);
               },
-              child: Padding(
+              child: const Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Icon(
                   Icons.arrow_forward_ios_sharp,
                   size: 30.0,
-                  color: Color(0XFFFff3939),
+                  color: Color(0xfffff3939),
                 ),
               ),
             ),

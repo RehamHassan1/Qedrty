@@ -39,7 +39,7 @@ class _EditingMealState extends State<EditingMeal> {
               width: 360,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('lib/assets/images/images (10).jpeg'),
                   fit: BoxFit.cover,
                 ),
@@ -54,7 +54,7 @@ class _EditingMealState extends State<EditingMeal> {
         ),
            Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Container(
+          child: SizedBox(
             height: sizeh / 7,
             child: Row(
               children: [
@@ -75,16 +75,16 @@ class _EditingMealState extends State<EditingMeal> {
                 Container(
                   width: sizew / 8,
                 ),
-                Column(
+                const Column(
                   children: [
-                    const Text(
+                    Text(
                       "طلب وسط",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
-                    const Text(
+                    Text(
                       "فول مدمس بالزيت الحار",
                       style: TextStyle(
                           color: Colors.black54,
@@ -112,14 +112,14 @@ class _EditingMealState extends State<EditingMeal> {
         ),
         Myoutlinebutton(
           hinttext: 'تعديل الوجبة',
-          backgroundColor: Color(0XFFFff3939),
+          backgroundColor: const Color(0xfffff3939),
         ),
       ]),
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,
         selectedItemColor: Colors.white,
-        snakeViewColor: Color(0XFFFff3939),
-        unselectedItemColor: Color(0XFFFff3939),
+        snakeViewColor: const Color(0xfffff3939),
+        unselectedItemColor: const Color(0xfffff3939),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

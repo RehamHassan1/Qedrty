@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_2drety/Pages/page3.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 
 import '../componant/com.dart';
@@ -22,7 +23,7 @@ class _OrderResturantState extends State<OrderResturant> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-
+     
     return Scaffold(
       body: Column(
         children: [
@@ -33,6 +34,20 @@ class _OrderResturantState extends State<OrderResturant> {
                 color: const Color(0xfffff3939),
                 height: size.height / 4,
               ),
+               Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 25),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 50),
                 child: Center(
@@ -49,7 +64,11 @@ class _OrderResturantState extends State<OrderResturant> {
           ),
           Stack(children: [
             InkWell(
-              onTap: () {}, // Handle your callback.
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return  OrderMenu();
+              }));
+              }, // Handle your callback.
 
               splashColor: Colors.brown.withOpacity(0.5),
 
@@ -71,7 +90,9 @@ class _OrderResturantState extends State<OrderResturant> {
 
            Stack(children: [
             InkWell(
-              onTap: () {}, // Handle your callback.
+              onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return  OrderMenu();
+              }));}, // Handle your callback.
 
               splashColor: Colors.brown.withOpacity(0.5),
 
@@ -93,7 +114,9 @@ class _OrderResturantState extends State<OrderResturant> {
           Container(height: size.height/35,),
            Stack(children: [
             InkWell(
-              onTap: () {}, // Handle your callback.
+              onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return  OrderMenu();
+              }));}, // Handle your callback.
 
               splashColor: Colors.brown.withOpacity(0.5),
 

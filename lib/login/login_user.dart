@@ -4,7 +4,6 @@ import 'package:flutter_app_2drety/Register/register_user.dart';
 import 'package:flutter_app_2drety/componant/com.dart';
 import 'package:flutter_app_2drety/login/Cubit/login_cubit/login_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../Pages/page1.dart';
 
@@ -23,12 +22,14 @@ class LoginUser extends StatelessWidget {
     //  final size = MediaQuery.of(context).size;
     double sizew = MediaQuery.of(context).size.width;
     double sizeh = MediaQuery.of(context).size.height;
-
+    bool istrue = false;
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginLoading) {
           showLoading(context);
+          
         } else if (state is LoginSuccess) {
+          istrue = true;
           Navigator.of(context).pop();
           Navigator.pushNamed(context, Page1.id);
         } else if (state is LoginFailure) {
@@ -108,6 +109,12 @@ class LoginUser extends StatelessWidget {
                             BlocProvider.of<LoginCubit>(context)
                                 .loginUser(email: email!, password: passwordd!);
                           }
+                         
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const Page1();
+                            }));
+                          
                         },
                         style: OutlinedButton.styleFrom(
                           foregroundColor: Colors.white,

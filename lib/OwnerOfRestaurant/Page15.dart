@@ -46,13 +46,27 @@ class _DeleteMealState extends State<DeleteMeal> {
               ),
             ),
           ),
+           Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 25),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
           //Container(color: Colors.greenAccent,width: 200,height: 110,),
           //    Text("طلب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
         ]),
         Container(
           height: sizeh / 15,
         ),
-        Myoutlinebutton(hinttext: 'حذف', backgroundColor: const Color(0xfffff3939))
+        Myoutlinebutton(hinttext: 'حذف', backgroundColor: const Color(0xfffff3939),onPressed: (){})
       ]),
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,

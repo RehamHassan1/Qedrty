@@ -46,6 +46,20 @@ class _EditingMealState extends State<EditingMeal> {
               ),
             ),
           ),
+           Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 25),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
           //Container(color: Colors.greenAccent,width: 200,height: 110,),
           //    Text("طلب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
         ]),
@@ -112,7 +126,7 @@ class _EditingMealState extends State<EditingMeal> {
         ),
         Myoutlinebutton(
           hinttext: 'تعديل الوجبة',
-          backgroundColor: const Color(0xfffff3939),
+          backgroundColor: const Color(0xfffff3939),onPressed: (){}
         ),
       ]),
       bottomNavigationBar: SnakeNavigationBar.color(

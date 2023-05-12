@@ -45,6 +45,20 @@ class _AddOrderState extends State<AddOrder> {
                 color: Colors.white,
               )),
             ),
+             Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 25),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
           ]),
         ),
         Container(

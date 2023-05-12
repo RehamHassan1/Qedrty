@@ -50,7 +50,7 @@ Widget Myoutlinebutton({
   required String hinttext,
   IconData? prfx,
   TextInputType? typ,
-
+  required VoidCallback? onPressed,
   //Function(String)? onChange,
   IconData? sfx,
   String? Function(String?)? validator,
@@ -168,3 +168,4 @@ Widget AddItem(BuildContext cxt,int? itemkey) {
     ),
   );
 }
+

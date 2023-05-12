@@ -1,9 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_2drety/OwnerOfRestaurant/Page13.dart';
 import 'package:flutter_app_2drety/OwnerOfRestaurant/Page15.dart';
 import 'package:flutter_app_2drety/OwnerOfRestaurant/Page17.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
-
 import '../componant/com.dart';
 
 class EnterOrder extends StatefulWidget {
@@ -49,6 +49,20 @@ class _EnterOrderState extends State<EnterOrder> {
               ),
             ),
           ),
+           Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 25),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
           //Container(color: Colors.greenAccent,width: 200,height: 110,),
           //    Text("طلب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
         ]),
@@ -96,7 +110,7 @@ class _EnterOrderState extends State<EnterOrder> {
         TextButton(
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const AddMeal();
+              return  AddMeal(auth: FirebaseAuth.instance.currentUser!.uid,);
             }));
           },
           child: Text(

@@ -42,10 +42,9 @@ dependencies:
   flutter_bloc: ^8.1.2
   flutter_snake_navigationbar: ^0.6.1
   modal_progress_hud_nsn: ^0.4.0
-  hive_flutter:
-  hive:
-#  flutter_google_place_picker: "^0.0.1"
+  uuid: ^3.0.6
   location: "^4.4.0"
+#  flutter_google_place_picker: "^0.0.1"
 dev_dependencies:
   flutter_lints: ^2.0.1
   flutter_test:

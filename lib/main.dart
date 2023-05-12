@@ -4,12 +4,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_2drety/Register/cubit/cubit/register_cubit.dart';
 import 'package:flutter_app_2drety/Register/register_user.dart';
+import 'package:flutter_app_2drety/blocc/bloc_bloc.dart';
 import 'package:flutter_app_2drety/login/Cubit/login_cubit/login_cubit.dart';
+import 'package:flutter_app_2drety/login/login_user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/adapters.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'OwnerOfRestaurant/Page1.dart';
 
-import 'OwnerOfRestaurant/Page13.dart';
-
+import 'OwnerOfRestaurant/Page2.dart';
 import 'firebase_options.dart';
 
 bool islogin=false;
@@ -46,6 +48,9 @@ class _MyAppState extends State<MyApp> {
             create: (context) => LoginCubit(),
           ),
           BlocProvider(
+            create: (context) => CounterBloc(),
+          ),
+          BlocProvider(
             create: (context) => RegisterCubit(),
           ),
         ],
@@ -62,7 +67,11 @@ class _MyAppState extends State<MyApp> {
                 ColorScheme.fromSwatch(primarySwatch: Colors.lightGreen),
           ),
           debugShowCheckedModeBanner: false,
-          home: AddMeal(),
+          home: LoginUser(),
         ));
   }
 }
+
+
+
+

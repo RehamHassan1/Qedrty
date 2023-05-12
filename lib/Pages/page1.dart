@@ -37,6 +37,20 @@ class _Page1State extends State<Page1> {
               color: const Color(0xfffff3939),
               height: size.height / 4,
             ),
+             Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 25),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 50),
               child: Center(
@@ -131,7 +145,7 @@ class _Page1State extends State<Page1> {
                     image: const AssetImage('lib/assets/images/icons-location.png'),
                     height: size.height / 11),
                 Container(
-                  width: size.width / 3.5,
+                  width: size.width / 2.1,
                 ),
                 const Text(
                   "اكتشف",

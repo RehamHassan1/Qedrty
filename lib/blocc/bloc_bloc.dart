@@ -22,3 +22,4 @@ class CounterBloc extends Bloc<CounterEvent, Counterstate> {
     });
   }
 }
+

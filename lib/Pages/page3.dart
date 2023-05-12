@@ -6,7 +6,7 @@ import '../blocc/bloc_bloc.dart';
 import '../componant/com.dart';
 
 class OrderMenu extends StatefulWidget {
-  const OrderMenu({super.key});
+  OrderMenu({super.key});
 
   @override
   State<OrderMenu> createState() => _OrderMenuState();
@@ -34,6 +34,20 @@ class _OrderMenuState extends State<OrderMenu> {
               color: const Color(0xfffff3939),
               height: size.height / 4,
             ),
+             Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 25),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 50),
               child: Center(
@@ -235,7 +249,9 @@ class _OrderMenuState extends State<OrderMenu> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 140),
           child: Myoutlinebutton(
-              hinttext: 'اطلب', backgroundColor: const Color(0xfff409c74)),
+              hinttext: 'اطلب',
+              backgroundColor: const Color(0xfff409c74),
+              onPressed: () {}),
         )
       ]),
       bottomNavigationBar: SnakeNavigationBar.color(

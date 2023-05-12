@@ -4,13 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../componant/com.dart';
 import 'Page14.dart';
 
 class AddMeal extends StatefulWidget {
-  const AddMeal({super.key});
-
+  AddMeal({super.key,required this.auth});
+String auth =FirebaseAuth.instance.currentUser!.uid;
   @override
   State<AddMeal> createState() => _AddMealState();
 }
@@ -22,8 +23,8 @@ class _AddMealState extends State<AddMeal> {
   CollectionReference userref = FirebaseFirestore.instance.collection('Users');
   List users = [];
   addData() async {
-    var formdata = formstate.currentState;
-    if (formdata!.validate()) {
+   // var formdata = formstate.currentState;
+   // if (formdata!.validate()) {
       showLoading(context);
       await userref.add({
         "mealName": name,
@@ -31,7 +32,9 @@ class _AddMealState extends State<AddMeal> {
         "descripction": desc,
         "userID": FirebaseAuth.instance.currentUser!.uid
       });
-      formdata.save();
+      Navigator.of(context).pop();
+
+      //formdata.save();
       // Navigator.of(context).push(AfterAddMeal());
       Navigator.push(
         context,
@@ -39,7 +42,7 @@ class _AddMealState extends State<AddMeal> {
           return AfterAddMeal();
         }),
       );
-    }
+   // }
     //print(users);
   }
 
@@ -50,11 +53,12 @@ class _AddMealState extends State<AddMeal> {
       _selectedIndex = index;
     });
   }
-  final formkey = GlobalKey<FormState>();
 
-  final  mealName = TextEditingController();
-  final  mealPrice = TextEditingController();
-  final  mealDescreption = TextEditingController();
+  final formkey = GlobalKey<FormState>();
+  
+  final mealName = TextEditingController();
+  final mealPrice = TextEditingController();
+  final mealDescreption = TextEditingController();
   @override
   void initState() {
     addData();
@@ -76,9 +80,9 @@ class _AddMealState extends State<AddMeal> {
             Stack(children: [
               InkWell(
                 onTap: () {}, // Handle your callback.
-        
+
                 splashColor: Colors.brown.withOpacity(0.5),
-        
+                
                 child: Ink(
                   height: 110,
                   width: 360,
@@ -91,6 +95,20 @@ class _AddMealState extends State<AddMeal> {
                   ),
                 ),
               ),
+               Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 25),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
               //Container(color: Colors.greenAccent,width: 200,height: 110,),
               //    Text("طلب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
             ]),
@@ -103,49 +121,49 @@ class _AddMealState extends State<AddMeal> {
               child: Column(
                 children: [
                   TextF(
-                      hinttext: "اسم الوجبة",
-                      
-                      controller: mealName,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return "ادخل اسم الوجبة";
-                        }
-                        return null;
-                      },
-                      onsave: (val) {
-                        name = val;
-                      },
-                      typ: TextInputType.text,),
+                    hinttext: "اسم الوجبة",
+                    controller: mealName,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "ادخل اسم الوجبة";
+                      }
+                      return null;
+                    },
+                    onsave: (val) {
+                      name = val;
+                    },
+                    typ: TextInputType.text,
+                  ),
                   TextF(hinttext: "صورة", typ: TextInputType.url),
                   TextF(
-                      hinttext: "السعر",
-                      controller: mealPrice,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return "ادخل سعر الوجبة";
-                        }
-                        return null;
-                      },
-                      onsave: (val) {
-                        price = val;
-                      },
-                      typ: TextInputType.number,
-                      ),
+                    hinttext: "السعر",
+                    controller: mealPrice,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "ادخل سعر الوجبة";
+                      }
+                      return null;
+                    },
+                    onsave: (val) {
+                      price = val;
+                    },
+                    typ: TextInputType.number,
+                  ),
                   TextF(
-                      hinttext: "الوصف",
-                      controller: mealDescreption,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return "ادخل الوصف";
-                        } else if (value.length < 5)
-                          return "يجب على الوصف الا تقل عن 5 احرف";
-                        return null;
-                      },
-                      onsave: (val) {
-                        desc = val;
-                      },
-                      typ: TextInputType.text,
-                      ),
+                    hinttext: "الوصف",
+                    controller: mealDescreption,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "ادخل الوصف";
+                      } else if (value.length < 5)
+                        return "يجب على الوصف الا تقل عن 5 احرف";
+                      return null;
+                    },
+                    onsave: (val) {
+                      desc = val;
+                    },
+                    typ: TextInputType.text,
+                  ),
                 ],
               ),
             ),
@@ -156,7 +174,8 @@ class _AddMealState extends State<AddMeal> {
               type: MaterialType.transparency,
               child: Ink(
                 decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xfffff3939), width: 2.0),
+                  border:
+                      Border.all(color: const Color(0xfffff3939), width: 2.0),
                   color: Colors.white,
                   shape: BoxShape.circle,
                 ),
@@ -168,12 +187,9 @@ class _AddMealState extends State<AddMeal> {
                         MaterialPageRoute(builder: (context) {
                       return LoginUser();
                     }), (route) => false);*/
-                    await addData();
-                   if(formkey.currentState!.validate())
-                   {
-                    
-                   }
-                 
+                    if (formkey.currentState!.validate()) {
+                      await addData();
+                    }
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(10.0),

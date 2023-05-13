@@ -14,7 +14,7 @@ import 'OwnerOfRestaurant/Page1.dart';
 import 'OwnerOfRestaurant/Page2.dart';
 import 'firebase_options.dart';
 
-bool islogin=false;
+bool islogin = false;
 void main() async {
   // Bloc.observer  = SimpleBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
@@ -71,7 +71,3 @@ class _MyAppState extends State<MyApp> {
         ));
   }
 }
-
-
-
-

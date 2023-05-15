@@ -8,10 +8,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../componant/com.dart';
 import 'Page14.dart';
+import 'Page16.dart';
 
 class AddMeal extends StatefulWidget {
-  AddMeal({super.key,required this.auth});
-String auth =FirebaseAuth.instance.currentUser!.uid;
+  AddMeal({super.key, required this.auth});
+  String auth = FirebaseAuth.instance.currentUser!.uid;
   @override
   State<AddMeal> createState() => _AddMealState();
 }
@@ -23,26 +24,26 @@ class _AddMealState extends State<AddMeal> {
   CollectionReference userref = FirebaseFirestore.instance.collection('Users');
   List users = [];
   addData() async {
-   // var formdata = formstate.currentState;
-   // if (formdata!.validate()) {
-      showLoading(context);
-      await userref.add({
-        "mealName": name,
-        "price": price,
-        "descripction": desc,
-        "userID": FirebaseAuth.instance.currentUser!.uid
-      });
-      Navigator.of(context).pop();
+    // var formdata = formstate.currentState;
+    // if (formdata!.validate()) {
+    showLoading(context);
+    await userref.add({
+      "mealName": name,
+      "price": price,
+      "descripction": desc,
+      "userID": FirebaseAuth.instance.currentUser!.uid
+    });
+    Navigator.of(context).pop();
 
-      //formdata.save();
-      // Navigator.of(context).push(AfterAddMeal());
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) {
-          return AfterAddMeal();
-        }),
-      );
-   // }
+    //formdata.save();
+    // Navigator.of(context).push(AfterAddMeal());
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) {
+        return AfterAddMeal();
+      }),
+    );
+    // }
     //print(users);
   }
 
@@ -55,7 +56,7 @@ class _AddMealState extends State<AddMeal> {
   }
 
   final formkey = GlobalKey<FormState>();
-  
+
   final mealName = TextEditingController();
   final mealPrice = TextEditingController();
   final mealDescreption = TextEditingController();
@@ -82,7 +83,7 @@ class _AddMealState extends State<AddMeal> {
                 onTap: () {}, // Handle your callback.
 
                 splashColor: Colors.brown.withOpacity(0.5),
-                
+
                 child: Ink(
                   height: 110,
                   width: 360,
@@ -95,20 +96,20 @@ class _AddMealState extends State<AddMeal> {
                   ),
                 ),
               ),
-               Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 25),
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                    ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.white,
+                    size: 30,
                   ),
+                ),
+              ),
               //Container(color: Colors.greenAccent,width: 200,height: 110,),
               //    Text("طلب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
             ]),
@@ -190,6 +191,11 @@ class _AddMealState extends State<AddMeal> {
                     if (formkey.currentState!.validate()) {
                       await addData();
                     }
+
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return AfterEditMeal();
+                    }));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(10.0),

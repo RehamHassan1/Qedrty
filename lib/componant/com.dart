@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 Widget TextF({
   required String hinttext,
   FormFieldSetter<String>? onsave,
@@ -13,6 +14,7 @@ Widget TextF({
 }) {
   return TextFormField(
     onSaved: onsave,
+    
       keyboardType: typ,
       validator: validator,
       onChanged: onChange,

@@ -37,20 +37,19 @@ class _Page1State extends State<Page1> {
               color: const Color(0xfffff3939),
               height: size.height / 4,
             ),
-             Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 25),
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                    ),
-                  ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                  size: 30,
+                ),
+              ),
+            ),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 50),
               child: Center(
@@ -106,13 +105,14 @@ class _Page1State extends State<Page1> {
             ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const VISA();
+                return VISA();
               }));
             },
             child: Row(
               children: [
                 Image(
-                  image: const AssetImage('lib/assets/images/icons8-cash-48.png'),
+                  image:
+                      const AssetImage('lib/assets/images/icons8-cash-48.png'),
                   height: size.height / 11,
                 ),
                 Container(
@@ -142,7 +142,8 @@ class _Page1State extends State<Page1> {
             child: Row(
               children: [
                 Image(
-                    image: const AssetImage('lib/assets/images/icons-location.png'),
+                    image: const AssetImage(
+                        'lib/assets/images/icons-location.png'),
                     height: size.height / 11),
                 Container(
                   width: size.width / 2.1,
@@ -157,10 +158,10 @@ class _Page1State extends State<Page1> {
         )
       ]),
       bottomNavigationBar: SnakeNavigationBar.color(
-   // height: 60,
-    selectedItemColor:Colors.white,
-    snakeViewColor:const Color(0xfffff3939),
-    unselectedItemColor:const Color(0xfffff3939),
+        // height: 60,
+        selectedItemColor: Colors.white,
+        snakeViewColor: const Color(0xfffff3939),
+        unselectedItemColor: const Color(0xfffff3939),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -172,7 +173,7 @@ class _Page1State extends State<Page1> {
           )
         ],
         currentIndex: _selectedIndex,
-      
+
         onTap: (indx) {
           setState(() {
             _selectedIndex = indx;

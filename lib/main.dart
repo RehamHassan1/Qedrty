@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_2drety/Pages/Home.dart';
 import 'package:flutter_app_2drety/Register/cubit/cubit/register_cubit.dart';
 import 'package:flutter_app_2drety/Register/register_user.dart';
 import 'package:flutter_app_2drety/blocc/bloc_bloc.dart';
@@ -11,16 +12,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'OwnerOfRestaurant/Page1.dart';
 
-import 'OwnerOfRestaurant/Page2.dart';
+
 import 'firebase_options.dart';
 
 bool islogin = false;
-void main() async {
+Future main() async {
   // Bloc.observer  = SimpleBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await Firebase.initializeApp();
   var user = FirebaseAuth.instance.currentUser;
   if (user == null) {
     islogin = false;
@@ -67,7 +69,7 @@ class _MyAppState extends State<MyApp> {
                 ColorScheme.fromSwatch(primarySwatch: Colors.lightGreen),
           ),
           debugShowCheckedModeBanner: false,
-          home: LoginUser(),
+          home: RegisterUser(),
         ));
   }
 }

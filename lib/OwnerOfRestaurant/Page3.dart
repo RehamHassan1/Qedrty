@@ -42,7 +42,7 @@ class _pagee2State extends State<pagee2> {
                 clipper: Myclipp(),
                 child: Stack(children: [
                   Container(
-                    color: Color.fromARGB(255, 85, 81, 81),
+                    color: Color(0xFFF444444),
                     height: size.height / 4,
                   ),
                   Padding(
@@ -103,8 +103,8 @@ class _pagee2State extends State<pagee2> {
                       validator: (value) {
                         if (value!.isEmpty)
                           return "برجاءانشاء كود";
-                        else if (value.length < 8)
-                          return "يجب على الكود الا يقل عن 8 احرف";
+                        else if (value.length < 4)
+                          return "يجب على الكود الا يقل عن 4 احرف";
                         return null;
                       },
                     ),

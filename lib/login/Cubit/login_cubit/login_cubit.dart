@@ -7,11 +7,11 @@ part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
- loginUser({required email, required password}) async {
+ loginUser({required email, required password,}) async {
     emit(LoginLoading());
     try {
       UserCredential user = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
+          .signInWithEmailAndPassword(email: email, password: password, );
       emit(LoginSuccess());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {

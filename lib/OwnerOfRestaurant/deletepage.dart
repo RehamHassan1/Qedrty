@@ -32,7 +32,7 @@ class _DeleteOrderState extends State<DeleteOrder> {
             clipper: Myclipp(),
             child: Stack(children: [
               Container(
-                color: const Color(0xfffff3939),
+                color:  Color(0xfffff3939),
                 height: sizeh / 4,
               ),
               const Padding(
@@ -135,7 +135,7 @@ class _DeleteOrderState extends State<DeleteOrder> {
                   width: 360,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    image: const DecorationImage(
+                    image:  DecorationImage(
                       image: AssetImage('lib/assets/images/images (23).jpeg'),
                       fit: BoxFit.cover,
                     ),

@@ -38,7 +38,7 @@ class _ownerhomeState extends State<ownerhome> {
             clipper: Myclipp(),
             child: Stack(children: [
               Container(
-                color: Color(0xFFF37474f),
+                color: Color(0xFFF444444),
                 height: sizeh / 4,
               ),
               Padding(
@@ -99,7 +99,7 @@ class _ownerhomeState extends State<ownerhome> {
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const pagee1();
+                  return  pagee1();
                 }));
               },
               child: Row(
@@ -134,7 +134,7 @@ class _ownerhomeState extends State<ownerhome> {
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const pagee4();
+                  return  pagee4();
                 }));
               },
               child: Row(
@@ -170,7 +170,7 @@ class _ownerhomeState extends State<ownerhome> {
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const pagee5();
+                  return  pagee5();
                 }));
               },
               child: Row(
@@ -208,7 +208,7 @@ class _ownerhomeState extends State<ownerhome> {
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const VISA();
+                  return  VISA();
                 }));
               },
               child: Row(

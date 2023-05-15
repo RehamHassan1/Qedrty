@@ -4,6 +4,7 @@ import 'package:flutter_app_2drety/Pages/setting.dart';
 import 'package:flutter_app_2drety/Pages/visa.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import '../componant/com.dart';
+import 'Page9.dart';
 
 class pagee6 extends StatefulWidget {
   const pagee6({super.key});
@@ -41,7 +42,7 @@ class _pagee6State extends State<pagee6> {
                 clipper: Myclipp(),
                 child: Stack(children: [
                   Container(
-                    color: Color.fromARGB(255, 85, 81, 81),
+                    color: Color(0xFFF444444),
                     height: sizeh / 4,
                   ),
                   Padding(
@@ -119,7 +120,7 @@ class _pagee6State extends State<pagee6> {
                     debugPrint(codecontroler.text);
                     Navigator.pushAndRemoveUntil(context,
                         MaterialPageRoute(builder: (context) {
-                      return pagee6();
+                      return AddOrder();
                     }), (route) => false);
                   }
                 },

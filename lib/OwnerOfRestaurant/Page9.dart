@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 
 import '../componant/com.dart';
+import 'Page12.dart';
 
 class AddOrder extends StatefulWidget {
   const AddOrder({super.key});
@@ -33,7 +34,7 @@ class _AddOrderState extends State<AddOrder> {
           clipper: Myclipp(),
           child: Stack(children: [
             Container(
-              color: const Color(0xfffff3939),
+              color: const Color(0xFFF444444),
               height: size.height / 4,
             ),
             const Padding(
@@ -66,7 +67,12 @@ class _AddOrderState extends State<AddOrder> {
         ),
         Stack(children: [
           InkWell(
-            onTap: () {}, // Handle your callback.
+            onTap: () {
+              Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return  EnterOrder();
+                        }));
+            }, // Handle your callback.
 
             splashColor: Colors.brown.withOpacity(0.5),
 

@@ -35,7 +35,7 @@ class _pagee1State extends State<pagee1> {
             clipper: Myclipp(),
             child: Stack(children: [
               Container(
-                color: Color(0xFFF37474f),
+                color: Color(0xFFF444444),
                 height: size.height / 4,
               ),
               Padding(
@@ -53,7 +53,7 @@ class _pagee1State extends State<pagee1> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: const Icon(
+                  icon:  Icon(
                     Icons.arrow_back_ios,
                     color: Colors.white,
                     size: 30,
@@ -79,7 +79,7 @@ class _pagee1State extends State<pagee1> {
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const pagee2();
+                  return  pagee2();
                 }));
               },
               child: Row(
@@ -142,7 +142,7 @@ class _pagee1State extends State<pagee1> {
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const pagee3();
+                  return  pagee3();
                 }));
               },
               child: Row(

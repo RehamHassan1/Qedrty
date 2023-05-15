@@ -44,7 +44,7 @@ class _pagee4State extends State<pagee4> {
                 clipper: Myclipp(),
                 child: Stack(children: [
                   Container(
-                    color: Color.fromARGB(255, 85, 81, 81),
+                    color: Color(0xFFF444444),
                     height: size.height / 4,
                   ),
                   Padding(
@@ -122,8 +122,8 @@ class _pagee4State extends State<pagee4> {
                       validator: (value) {
                         if (value!.isEmpty)
                           return "برجاءانشاء كود";
-                        else if (value.length < 8)
-                          return "يجب على الكود الا يقل عن 8 احرف";
+                        else if (value.length < 4)
+                          return "يجب على الكود الا يقل عن 4 احرف";
                         return null;
                       },
                     ),
@@ -142,8 +142,8 @@ class _pagee4State extends State<pagee4> {
                   validator: (value) {
                     if (value!.isEmpty)
                       return "ادخل رقم المرور";
-                    else if (value.length < 8)
-                      return "يجب على كلمة المرور الا تقل عن 8 احرف";
+                    else if (value.length < 6)
+                      return "يجب على كلمة المرور الا تقل عن 6 احرف";
                     return null;
                   },
                 ),

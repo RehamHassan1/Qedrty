@@ -4,7 +4,6 @@ import 'package:flutter_app_2drety/OwnerOfRestaurant/Page13.dart';
 import 'package:flutter_app_2drety/OwnerOfRestaurant/Page15.dart';
 import 'package:flutter_app_2drety/OwnerOfRestaurant/Page17.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
-import '../componant/com.dart';
 
 class EnterOrder extends StatefulWidget {
   const EnterOrder({super.key});

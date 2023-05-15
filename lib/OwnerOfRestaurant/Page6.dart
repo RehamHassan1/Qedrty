@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_2drety/OwnerOfRestaurant/Page7.dart';
 import 'package:flutter_app_2drety/Pages/profile.dart';
 import 'package:flutter_app_2drety/Pages/setting.dart';
-import 'package:flutter_app_2drety/Pages/visa.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import '../componant/com.dart';
 

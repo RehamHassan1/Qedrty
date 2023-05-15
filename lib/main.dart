@@ -9,7 +9,6 @@ import 'package:flutter_app_2drety/blocc/bloc_bloc.dart';
 import 'package:flutter_app_2drety/login/Cubit/login_cubit/login_cubit.dart';
 import 'package:flutter_app_2drety/login/login_user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'OwnerOfRestaurant/Page1.dart';
 
 
@@ -69,7 +68,7 @@ class _MyAppState extends State<MyApp> {
                 ColorScheme.fromSwatch(primarySwatch: Colors.lightGreen),
           ),
           debugShowCheckedModeBanner: false,
-          home: RegisterUser(),
+          home: HomePage(),
         ));
   }
 }

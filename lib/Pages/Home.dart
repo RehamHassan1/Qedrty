@@ -16,68 +16,70 @@ class _HomePageState extends State<HomePage> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Column(children: [
-        ClipPath(
-          clipper: Myclipp(),
-          child: Stack(children: [
-            Container(
-              color: const Color(0xfffff3939),
-              height: size.height / 2.7,
-            ),
-            Center(
-                child: Image(
-              image: const AssetImage('lib/assets/images/قدرتي (1)-PhotoRoom.png'),
-              height: size.height / 3.4,
-            )),
-          ]),
-        ),
-        Container(
-          height: 150,
-        ),
-        const Text(
-          "اطلب فطارك من مكانك",
-          style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(221, 41, 40, 40)),
-        ),
-        const Text("ووفر جهدك ووقتك",
+      body: SingleChildScrollView(
+        child: Column(children: [
+          ClipPath(
+            clipper: Myclipp(),
+            child: Stack(children: [
+              Container(
+                color: const Color(0xfffff3939),
+                height: size.height / 2.7,
+              ),
+              Center(
+                  child: Image(
+                image: const AssetImage('lib/assets/images/قدرتي (1)-PhotoRoom.png'),
+                height: size.height / 3.4,
+              )),
+            ]),
+          ),
+          Container(
+            height: 150,
+          ),
+          const Text(
+            "اطلب فطارك من مكانك",
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(221, 41, 40, 40))),
-        Container(
-          height: 120,
-        ),
-        Material(
-          type: MaterialType.transparency,
-          child: Ink(
-            decoration: BoxDecoration(
-              border: Border.all(color: const Color(0xfffff3939), width: 2.0),
-              color: Colors.white,
-              shape: BoxShape.circle,
-            ),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(100.0),
-              onTap: () {
-                Navigator.pushAndRemoveUntil(context,
-                    MaterialPageRoute(builder: (context) {
-                  return LoginUser();
-                }), (route) => false);
-              },
-              child: const Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Icon(
-                  Icons.arrow_forward_ios_sharp,
-                  size: 30.0,
-                  color: Color(0xfffff3939),
+                color: Color.fromARGB(221, 41, 40, 40)),
+          ),
+          const Text("ووفر جهدك ووقتك",
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(221, 41, 40, 40))),
+          Container(
+            height: 120,
+          ),
+          Material(
+            type: MaterialType.transparency,
+            child: Ink(
+              decoration: BoxDecoration(
+                border: Border.all(color: const Color(0xfffff3939), width: 2.0),
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(100.0),
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(context,
+                      MaterialPageRoute(builder: (context) {
+                    return LoginUser();
+                  }), (route) => false);
+                },
+                child: const Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Icon(
+                    Icons.arrow_forward_ios_sharp,
+                    size: 30.0,
+                    color: Color(0xfffff3939),
+                  ),
                 ),
               ),
             ),
-          ),
-        )
-        // IconButton(onPressed: (){}, iconSize: 40,icon: Icon(Icons.arrow_forward_ios_sharp))
-      ]),
+          )
+          // IconButton(onPressed: (){}, iconSize: 40,icon: Icon(Icons.arrow_forward_ios_sharp))
+        ]),
+      ),
     );
   }
 }

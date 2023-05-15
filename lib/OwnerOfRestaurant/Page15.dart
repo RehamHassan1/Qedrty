@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 
-import '../componant/com.dart';
 
 class DeleteMeal extends StatefulWidget {
   const DeleteMeal({super.key});

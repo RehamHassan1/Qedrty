@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_2drety/Pages/maps.dart';
 import 'package:flutter_app_2drety/Pages/profile.dart';
 import 'package:flutter_app_2drety/Pages/setting.dart';
 import 'package:flutter_app_2drety/Pages/visa.dart';
@@ -29,134 +30,140 @@ class _Page1State extends State<Page1> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Column(children: [
-        ClipPath(
-          clipper: Myclipp(),
-          child: Stack(children: [
-            Container(
-              color: const Color(0xfffff3939),
-              height: size.height / 4,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-              child: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.white,
-                  size: 30,
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 50),
-              child: Center(
-                  child: Icon(
-                Icons.person,
-                size: 60,
-                color: Colors.white,
-              )),
-            ),
-          ]),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                '120ج.م',
-                style: TextStyle(fontSize: 20, color: Colors.black),
-              ),
+      body: SingleChildScrollView(
+        child: Column(children: [
+          ClipPath(
+            clipper: Myclipp(),
+            child: Stack(children: [
               Container(
-                width: 50,
+                color: const Color(0xfffff3939),
+                height: size.height / 4,
               ),
-              /*Image(
-  
-                      image:
-  
-                          AssetImage('lib/assets/images/icons-location.png'),
-  
-                      height: size.height / 65,
-  
-                    ), */
-
-              const Text('حسابي',
-                  style: TextStyle(fontSize: 26, color: Colors.black)),
-            ],
-          ),
-        ),
-        Container(
-          height: 30,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: OutlinedButton(
-            style: ButtonStyle(
-              backgroundColor:
-                  MaterialStateProperty.all<Color>(const Color(0xfffefe4ce)),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.white,
+                    size: 30,
+                  ),
                 ),
               ),
-            ),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return VISA();
-              }));
-            },
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 50),
+                child: Center(
+                    child: Icon(
+                  Icons.person,
+                  size: 60,
+                  color: Colors.white,
+                )),
+              ),
+            ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image(
-                  image:
-                      const AssetImage('lib/assets/images/icons8-cash-48.png'),
-                  height: size.height / 11,
+                const Text(
+                  '120ج.م',
+                  style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
                 Container(
-                  width: size.width / 2,
+                  width: 50,
                 ),
-                const Text(
-                  "ايداع",
-                  style: TextStyle(color: Colors.black, fontSize: 25),
-                ),
+                /*Image(
+        
+                        image:
+        
+                            AssetImage('lib/assets/images/icons-location.png'),
+        
+                        height: size.height / 65,
+        
+                      ), */
+      
+                const Text('حسابي',
+                    style: TextStyle(fontSize: 26, color: Colors.black)),
               ],
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: OutlinedButton(
-            style: ButtonStyle(
-              backgroundColor:
-                  MaterialStateProperty.all<Color>(const Color(0xfffefe4ce)),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+          Container(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: OutlinedButton(
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(const Color(0xfffefe4ce)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
                 ),
               ),
-            ),
-            onPressed: () {},
-            child: Row(
-              children: [
-                Image(
-                    image: const AssetImage(
-                        'lib/assets/images/icons-location.png'),
-                    height: size.height / 11),
-                Container(
-                  width: size.width / 2.1,
-                ),
-                const Text(
-                  "اكتشف",
-                  style: TextStyle(color: Colors.black, fontSize: 25),
-                ),
-              ],
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return VISA();
+                }));
+              },
+              child: Row(
+                children: [
+                  Image(
+                    image:
+                        const AssetImage('lib/assets/images/icons8-cash-48.png'),
+                    height: size.height / 11,
+                  ),
+                  Container(
+                    width: size.width / 2,
+                  ),
+                  const Text(
+                    "ايداع",
+                    style: TextStyle(color: Colors.black, fontSize: 25),
+                  ),
+                ],
+              ),
             ),
           ),
-        )
-      ]),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: OutlinedButton(
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(const Color(0xfffefe4ce)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Maps();
+                }));
+              },
+              child: Row(
+                children: [
+                  Image(
+                      image: const AssetImage(
+                          'lib/assets/images/icons-location.png'),
+                      height: size.height / 11),
+                  Container(
+                    width: size.width / 2.1,
+                  ),
+                  const Text(
+                    "اكتشف",
+                    style: TextStyle(color: Colors.black, fontSize: 25),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ]),
+      ),
       bottomNavigationBar: SnakeNavigationBar.color(
         // height: 60,
         selectedItemColor: Colors.white,

@@ -25,117 +25,119 @@ class _OrderResturantState extends State<OrderResturant> {
     final size = MediaQuery.of(context).size;
      
     return Scaffold(
-      body: Column(
-        children: [
-          ClipPath(
-            clipper: Myclipp(),
-            child: Stack(children: [
-              Container(
-                color: const Color(0xfffff3939),
-                height: size.height / 4,
-              ),
-               Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 25),
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                        size: 30,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ClipPath(
+              clipper: Myclipp(),
+              child: Stack(children: [
+                Container(
+                  color: const Color(0xfffff3939),
+                  height: size.height / 4,
+                ),
+                 Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 25),
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                          size: 30,
+                        ),
                       ),
                     ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 50),
+                  child: Center(
+                      child: Icon(
+                    Icons.person,
+                    size: 60,
+                    color: Colors.white,
+                  )),
+                ),
+              ]),
+            ),
+            Container(
+              height: size.height / 11,
+            ),
+            Stack(children: [
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return  OrderMenu();
+                }));
+                }, // Handle your callback.
+      
+                splashColor: Colors.brown.withOpacity(0.5),
+      
+                child: Ink(
+                  height: 110,
+                  width: 360,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: const DecorationImage(
+                      image: AssetImage('lib/assets/images/images (10).jpeg'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 50),
-                child: Center(
-                    child: Icon(
-                  Icons.person,
-                  size: 60,
-                  color: Colors.white,
-                )),
+                ),
               ),
+              //Container(color: Colors.greenAccent,width: 200,height: 110,),
+              const Text("سندوتشات",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
+            ]),          Container(height: size.height/35,),
+      
+             Stack(children: [
+              InkWell(
+                onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return  OrderMenu();
+                }));}, // Handle your callback.
+      
+                splashColor: Colors.brown.withOpacity(0.5),
+      
+                child: Ink(
+                  height: 110,
+                  width: 360,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: const DecorationImage(
+                      image: AssetImage('lib/assets/images/images (1).jpeg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              //Container(color: Colors.greenAccent,width: 200,height: 110,),
+              const Text("سايب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
             ]),
-          ),
-          Container(
-            height: size.height / 11,
-          ),
-          Stack(children: [
-            InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return  OrderMenu();
-              }));
-              }, // Handle your callback.
-
-              splashColor: Colors.brown.withOpacity(0.5),
-
-              child: Ink(
-                height: 110,
-                width: 360,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: const DecorationImage(
-                    image: AssetImage('lib/assets/images/images (10).jpeg'),
-                    fit: BoxFit.cover,
+            Container(height: size.height/35,),
+             Stack(children: [
+              InkWell(
+                onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return  OrderMenu();
+                }));}, // Handle your callback.
+      
+                splashColor: Colors.brown.withOpacity(0.5),
+      
+                child: Ink(
+                  height: 110,
+                  width: 360,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: const DecorationImage(
+                      image: AssetImage('lib/assets/images/images (23).jpeg'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
-            ),
-            //Container(color: Colors.greenAccent,width: 200,height: 110,),
-            const Text("سندوتشات",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
-          ]),          Container(height: size.height/35,),
-
-           Stack(children: [
-            InkWell(
-              onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return  OrderMenu();
-              }));}, // Handle your callback.
-
-              splashColor: Colors.brown.withOpacity(0.5),
-
-              child: Ink(
-                height: 110,
-                width: 360,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: const DecorationImage(
-                    image: AssetImage('lib/assets/images/images (1).jpeg'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            //Container(color: Colors.greenAccent,width: 200,height: 110,),
-            const Text("سايب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
-          ]),
-          Container(height: size.height/35,),
-           Stack(children: [
-            InkWell(
-              onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return  OrderMenu();
-              }));}, // Handle your callback.
-
-              splashColor: Colors.brown.withOpacity(0.5),
-
-              child: Ink(
-                height: 110,
-                width: 360,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: const DecorationImage(
-                    image: AssetImage('lib/assets/images/images (23).jpeg'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            //Container(color: Colors.greenAccent,width: 200,height: 110,),
-            const Text("طلب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
-          ])
-        ],
+              //Container(color: Colors.greenAccent,width: 200,height: 110,),
+              const Text("طلب",style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),),
+            ])
+          ],
+        ),
       ),
       bottomNavigationBar: SnakeNavigationBar.color(
         //height: 110,

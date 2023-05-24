@@ -12,6 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'OwnerOfRestaurant/Page1.dart';
 
 
+import 'Pages/maps.dart';
 import 'firebase_options.dart';
 
 bool islogin = false;
@@ -55,6 +56,11 @@ class _MyAppState extends State<MyApp> {
             create: (context) => RegisterCubit(),
           ),
         ],
+        child: GestureDetector(
+          behavior:HitTestBehavior.opaque ,
+          onTap: (){
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
         child: MaterialApp(
           routes: {
             // LoginUser.id :(context) => LoginUser(),
@@ -69,6 +75,6 @@ class _MyAppState extends State<MyApp> {
           ),
           debugShowCheckedModeBanner: false,
           home: HomePage(),
-        ));
+        )));
   }
 }
